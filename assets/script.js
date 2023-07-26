@@ -10,21 +10,30 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   let hourArr= [[9,'am'], [10,'am'], [11,'am'], [12,'pm'],[ 1,'pm'], [2,'pm'], [3,'pm'],[ 4,'pm'], [5,'pm']]
+
+
   $.each(hourArr, (i,val) => {
     console.log(i,val)
     $('.container-lg').append(`
-    <div id="hour-9" class="row time-block past">
+    <div id="${val[0]}" class="row time-block">
         <div class="col-2 col-md-1 hour text-center py-3">${val[0]}${val[1]}</div>
-        <textarea class="col-8 col-md-10 description" name="hour-9" rows="3"> </textarea>
+        <textarea id='txt'class="col-8 col-md-10 description" name="${val[0]}" rows="3"> </textarea>
         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
       </div>
     `)
   })
+
   $('.btn').on('click', function() {
-    console.log(`button clicked`)
+    var txt = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id')
+    console.log(`button clicked + ${txt} + ${time}`)
+    localStorage.setItem(txt, time)
   })
+
+
+  
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
