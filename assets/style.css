@@ -59,6 +59,7 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+/* Adds styling to the new Clear button */
 .btn-2 {
   background-color: rgb(255, 193, 22);
 }
