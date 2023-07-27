@@ -11,7 +11,6 @@ $(function () {
   // useful when saving the description in local storage?
   let hourArr= [[9,'am'], [10,'am'], [11,'am'], [12,'pm'],[ 1,'pm'], [2,'pm'], [3,'pm'],[ 4,'pm'], [5,'pm']]
 
-
   $.each(hourArr, (i,val) => {
     console.log(i,val)
     $('.container-lg').append(`
@@ -32,6 +31,13 @@ $(function () {
     localStorage.setItem(txt, time)
   })
 
+  
+  var dateDisplay = () => {
+    var currentDate = dayjs().format('MM/DD/YYYY hh:mm:ss');
+    $('#currentDay').text(currentDate);
+  }
+  setInterval(dateDisplay, 1000)
+  
 
   
   // TODO: Add code to apply the past, present, or future class to each time
