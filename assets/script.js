@@ -32,6 +32,13 @@ $(function () {
     localStorage.setItem(time,txt)
   })
 
+  $('.btn-2').on('click', function() {
+    var txt = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id')
+    localStorage.removeItem(time,txt)
+    $(this).siblings('.description').val('')
+  })
+
   
   var dateDisplay = () => {
 
