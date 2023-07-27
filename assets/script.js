@@ -19,6 +19,9 @@ $(function () {
         <button class="btn saveBtn col-2 col-md-1" aria-label="save">
           <i class="fas fa-save" aria-hidden="true"></i>
         </button>
+        <button class="btn-2 col-1 col-md-2" aria-label="clear">
+        <i class="fas fa-solid fa-trash" aria-hidden="true"></i>
+        </button>
       </div>
     `)
   })
