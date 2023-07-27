@@ -56,7 +56,7 @@ $(function () {
     $.each($('.time-block'), function () {
       //Stores the id of each time-block as an integer, as opposed to a string
       var timeBlockID = parseInt($(this).attr("id"))
-      //Determines if the current time integer is less than, equal to, or greater than the time-block id integer, and assigns a new class to the time-block based on those parameters.
+      //Determines if the current time integer is less than, equal to, or greater than the time-block id integer, and assigns a new class to that time-block based on those parameters.
       if (timeBlockID < currentHour) {
         $(this).addClass('past')
       } else if (timeBlockID == currentHour) {
