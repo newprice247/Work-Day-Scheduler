@@ -1,4 +1,5 @@
 
+
 $(function () {
 
   // This array stores the id's that will be used in the time-block divs created below, as well as the time-box descriptors(i.e. the block times: 9am through 5pm)
